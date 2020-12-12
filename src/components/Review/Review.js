@@ -11,12 +11,16 @@ class Review extends Component{
     render(){
         return(
             <div>
-                <h2>Need a table here to display input results</h2>
+                <h2>{JSON.stringify(this.props.reduxState)}</h2>
                 <button onClick={this.submit}>this button will post inputs and open a new page</button>
             </div>
         ) //end return 
     } //end render
 } //end class 
 
+const putReduxStateOnProps = ( reduxState) => ({ 
+    reduxState
+  })
+
 //export
-export default connect()(Review); 
+export default connect(putReduxStateOnProps)(Review); 

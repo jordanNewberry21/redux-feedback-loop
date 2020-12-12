@@ -10,13 +10,22 @@ class Feeling extends Component{
     }
 
     nextPage = () => {
-        console.log('In nextPage button.....');
-        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback})
-        this.props.history.push('/understanding');
+        if (this.state.newFeedback === '') {
+            alert('Please fill in the required information!')
+        } else {
+            console.log('In nextPage button.....');
+            this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.feeling})
+            // sending the data to the reduxStore like this puts it directly into the array.
+            // It doesn't have a key name to access it but I can display it on the review page
+            // using the index numbers.
+            // I feel like this way is probably not ideal, but i'm going to go with it for now.
+            this.props.history.push('/understanding');
+        }
     }
 
     handleChange = (event, inputType) => { 
         console.log(inputType, '=', event.target.value)
+        
         this.setState({     
             newFeedback: { 
                 ...this.state.newFeedback,
@@ -31,7 +40,7 @@ class Feeling extends Component{
             <div>
                 <h2>How are you feeling today?</h2>
                 <input onChange={(event) => this.handleChange(event, 'feeling')}
-                    type="number" max="6" label="Feeling?" />
+                    required type="number" max="6" label="Feeling?" />
                 <button onClick={this.nextPage}>NEXT</button>
             </div>
         ) //end return 

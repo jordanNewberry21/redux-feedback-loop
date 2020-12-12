@@ -12,7 +12,7 @@ class Understanding extends Component{
 
     nextPage = () => {
         console.log('In nextPage button.....');
-        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback})
+        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.understanding})
         this.props.history.push('/support');
     }
 
@@ -32,7 +32,7 @@ class Understanding extends Component{
             <div>
                 <h2>How well are you understanding the current content?</h2>
                 <input onChange={(event) => this.handleChange(event, 'understanding')}
-                    type="number" max="6" label="understanding?" />
+                    required type="number" max="6" label="understanding?" />
                 <button onClick={this.nextPage}>NEXT</button>
             </div>
         ) //end return 

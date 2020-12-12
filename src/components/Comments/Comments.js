@@ -10,7 +10,7 @@ class Comments extends Component{
 
     nextPage = () => {
         console.log('In nextPage button.....');
-        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback})
+        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.comments})
         this.props.history.push('/review');
     }
 

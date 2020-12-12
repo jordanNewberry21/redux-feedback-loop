@@ -11,7 +11,7 @@ class Support extends Component{
 
     nextPage = () => {
         console.log('In nextPage button.....');
-        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback})
+        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.support})
         this.props.history.push('/comments');
     }
 
@@ -31,7 +31,7 @@ class Support extends Component{
             <div>
                 <h2>How well are you feeling supported?</h2>
                 <input onChange={(event) => this.handleChange(event, 'support')}
-                    type="number" max="6" label="supported?" />
+                    required type="number" max="6" label="supported?" />
                 <button onClick={this.nextPage}>NEXT</button>
             </div>
         ) //end return 

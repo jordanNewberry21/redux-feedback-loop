@@ -40,7 +40,7 @@ class Feeling extends Component{
             <div>
                 <h2>How are you feeling today?</h2>
                 <input onChange={(event) => this.handleChange(event, 'feeling')}
-                    required type="number" max="6" label="Feeling?" />
+                    required type="number" max="5" label="Feeling?" />
                 <button onClick={this.nextPage}>NEXT</button>
             </div>
         ) //end return 

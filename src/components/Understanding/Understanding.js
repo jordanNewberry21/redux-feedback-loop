@@ -32,7 +32,7 @@ class Understanding extends Component{
             <div>
                 <h2>How well are you understanding the current content?</h2>
                 <input onChange={(event) => this.handleChange(event, 'understanding')}
-                    required type="number" max="6" label="understanding?" />
+                    required type="number" max="5" label="understanding?" />
                 <button onClick={this.nextPage}>NEXT</button>
             </div>
         ) //end return 

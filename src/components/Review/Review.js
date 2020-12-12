@@ -26,7 +26,6 @@ class Review extends Component{
     render(){
         return(
             <div>
-                <h2>{JSON.stringify(this.props.reduxState.formInputs)}</h2>
                 <div>
                     <h3>Feeling: {this.props.reduxState.formInputs[0]}</h3>
                 </div>

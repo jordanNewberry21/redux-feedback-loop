@@ -31,7 +31,7 @@ class Support extends Component{
             <div>
                 <h2>How well are you feeling supported?</h2>
                 <input onChange={(event) => this.handleChange(event, 'support')}
-                    required type="number" max="6" label="supported?" />
+                    required type="number" max="5" label="supported?" />
                 <button onClick={this.nextPage}>NEXT</button>
             </div>
         ) //end return 

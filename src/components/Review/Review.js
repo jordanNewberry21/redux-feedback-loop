@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -13,17 +13,17 @@ class Review extends Component{
         comments: this.props.reduxState.formInputs[3]
     }
 
-    submit = () => {
-        Axios.post('/feedback', this.state).then((response) => {
+    submit = () => { // axios POST request
+        axios.post('/feedback', this.state).then((response) => {
             console.log('back from POST.......', response.data);
         }).catch((error) => {
             console.log('error with POST.......', error);
             alert('something wrong with the POST')
         })
-        this.props.history.push('/end-page')
+        this.props.history.push('/end-page') // pushing to the final page view
     }
 
-    render(){
+    render(){ // displaying user feedback results
         return(
             <div>
                 <div>
@@ -44,6 +44,7 @@ class Review extends Component{
     } //end render
 } //end class 
 
+// bringing in reduxStore to access the feedback reducer
 const putReduxStateOnProps = ( reduxState) => ({ 
     reduxState
   })

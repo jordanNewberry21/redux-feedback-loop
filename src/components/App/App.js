@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
+
+// component imports
 import Home from '../Home/Home'
 import Feeling from '../Feeling/Feeling'
 import Understanding from '../Understanding/Understanding'
@@ -9,6 +11,8 @@ import Comments from '../Comments/Comments'
 import Review from '../Review/Review'
 import EndPage from '../EndPage/EndPage'
 
+
+// App
 class App extends Component {
   render() {
     return (

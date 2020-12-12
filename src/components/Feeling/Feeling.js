@@ -10,7 +10,8 @@ class Feeling extends Component{
         
     }
 
-    nextPage = () => {
+    nextPage = () => {// start nextPage function
+        // input validation
         if (this.state.newFeedback.feeling === undefined) {
             alert('Please fill in the required information!')
         } else {
@@ -20,7 +21,7 @@ class Feeling extends Component{
             // It doesn't have a key name to access it but I can display it on the review page
             // using the index numbers.
             // I feel like this way is probably not ideal, but i'm going to go with it for now.
-            this.props.history.push('/understanding');
+            this.props.history.push('/understanding'); // next page
         }
     }
 

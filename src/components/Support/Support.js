@@ -9,13 +9,15 @@ class Support extends Component{
         newFeedback: {}
     }
 
-    nextPage = () => {
+    nextPage = () => { // start nextPage
+        // input validation
         if (this.state.newFeedback.support === undefined) {
             alert('Please fill in the required information!')
         } else {
             console.log('In nextPage button.....');
+            // dispatch to reduxStore
             this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.support})
-            this.props.history.push('/comments');
+            this.props.history.push('/comments'); // pushing to next view
         }
     }
 

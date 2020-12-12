@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 //class
 class Home extends Component{
 
-    nextPage = () => {
+    nextPage = () => { // this function simply goes to the next view
         console.log('In nextPage button.....')
         this.props.history.push('/feeling')
     }

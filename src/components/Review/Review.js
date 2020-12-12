@@ -13,4 +13,4 @@ class Review extends Component{
 } //end class 
 
 //export
-export default Review; 
+export default connect()(Review); 

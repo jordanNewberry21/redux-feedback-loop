@@ -1,10 +1,25 @@
+import Axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 //class
 class Review extends Component{
 
+    //local state to store the feedback before POST
+    state = {
+        feeling: this.props.reduxState.formInputs[0],
+        understanding: this.props.reduxState.formInputs[1],
+        support: this.props.reduxState.formInputs[2],
+        comments: this.props.reduxState.formInputs[3]
+    }
+
     submit = () => {
+        Axios.post('/feedback', this.state).then((response) => {
+            console.log('back from POST.......', response.data);
+        }).catch((error) => {
+            console.log('error with POST.......', error);
+            alert('something wrong with the POST')
+        })
         this.props.history.push('/end-page')
     }
 

@@ -7,6 +7,7 @@ class EndPage extends Component{
     restart = () => {
         console.log('I need this button to clear the form information....');
         console.log('and take me back to the beginning....');
+        this.props.dispatch({type: 'RESET'})
         this.props.history.push('/')
     }
 

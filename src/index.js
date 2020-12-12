@@ -8,9 +8,11 @@ import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-const formInputs = (state='', action) => {
+const formInputs = (state=[], action) => {
     if (action.type === 'INPUT_FORM') {
         return [...state, action.payload]
+    } else if (action.type === 'RESET') {
+        return state=[];
     }
     return state;
 }

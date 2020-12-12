@@ -6,11 +6,12 @@ class Feeling extends Component{
 
     // local state
     state = {
-        newFeedback: {}
+        newFeedback: {},
+        
     }
 
     nextPage = () => {
-        if (this.state.newFeedback === '') {
+        if (this.state.newFeedback.feeling === undefined) {
             alert('Please fill in the required information!')
         } else {
             console.log('In nextPage button.....');

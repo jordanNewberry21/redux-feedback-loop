@@ -11,9 +11,13 @@ class Understanding extends Component{
     }
 
     nextPage = () => {
-        console.log('In nextPage button.....');
-        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.understanding})
-        this.props.history.push('/support');
+        if (this.state.newFeedback.understanding === undefined) {
+            alert('Please fill in the required information!')
+        } else {
+            console.log('In nextPage button.....');
+            this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.understanding})
+            this.props.history.push('/support');
+        }
     }
 
     handleChange = (event, inputType) => { 

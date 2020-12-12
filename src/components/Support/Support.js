@@ -10,9 +10,13 @@ class Support extends Component{
     }
 
     nextPage = () => {
-        console.log('In nextPage button.....');
-        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.support})
-        this.props.history.push('/comments');
+        if (this.state.newFeedback.support === undefined) {
+            alert('Please fill in the required information!')
+        } else {
+            console.log('In nextPage button.....');
+            this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.support})
+            this.props.history.push('/comments');
+        }
     }
 
     handleChange = (event, inputType) => { 

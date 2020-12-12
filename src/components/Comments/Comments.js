@@ -9,9 +9,13 @@ class Comments extends Component{
     }
 
     nextPage = () => {
-        console.log('In nextPage button.....');
-        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.comments})
-        this.props.history.push('/review');
+        if (this.state.newFeedback.comments === undefined) {
+            alert('Please fill in the required information!')
+        } else {
+            console.log('In nextPage button.....');
+            this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.comments})
+            this.props.history.push('/review');
+        }
     }
 
     handleChange = (event, inputType) => { 

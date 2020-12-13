@@ -17,10 +17,11 @@ class Feeling extends Component{
         } else {
             console.log('In nextPage button.....');
             this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.feeling})
-            // sending the data to the reduxStore like this puts it directly into the array.
+            // sending the data to the reduxStore like this puts it directly into the array as a number
             // It doesn't have a key name to access it but I can display it on the review page
             // using the index numbers.
-            // I feel like this way is probably not ideal, but i'm going to go with it for now.
+            // I feel like this way is probably not ideal for some applications, 
+            // but for this one I don't see how it could be a problem I guess.
             this.props.history.push('/understanding'); // next page
         }
     }
@@ -41,6 +42,7 @@ class Feeling extends Component{
         return(
             <div>
                 <h2>How are you feeling today?</h2>
+                <h4>Score 1-5</h4>
                 <input onChange={(event) => this.handleChange(event, 'feeling')}
                     required type="number" max="5" label="Feeling?" />
                 <button onClick={this.nextPage}>NEXT</button>

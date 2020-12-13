@@ -34,13 +34,25 @@ class Comments extends Component{
         
     }
 
+    changePrev = () => {
+        console.log('going back to the last page.....');
+        this.props.history.push('/support');
+    }
+
     render(){
         return(
             <div>
                 <h2>Is there anything else you would like us to know this week?</h2>
+                <h4>Leave a few short comments (optional)</h4>
                 <input onChange={(event) => this.handleChange(event, 'comments')}
                     type="text" label="comments" />
                 <button onClick={this.nextPage}>NEXT</button>
+                <br />
+                <br />
+                <br />
+                <div>
+                    <button onClick={this.changePrev}>Change Previous Score</button>
+                </div>
             </div>
         ) //end return 
     } //end render

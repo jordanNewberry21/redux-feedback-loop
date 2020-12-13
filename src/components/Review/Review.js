@@ -23,6 +23,11 @@ class Review extends Component{
         this.props.history.push('/end-page') // pushing to the final page view
     }
 
+    changePrev = () => {
+        console.log('going back to the last page.....');
+        this.props.history.push('/comments');
+    }
+
     render(){ // displaying user feedback results
         return(
             <div>
@@ -38,7 +43,13 @@ class Review extends Component{
                 <div>
                     <h3>Comments: {this.props.reduxState.formInputs[3]}</h3>
                 </div>
-                <button onClick={this.submit}>this button will post inputs and open a new page</button>
+                <button onClick={this.submit}>Submit Feedback</button>
+                <br />
+                <br />
+                <br />
+                <div>
+                    <button onClick={this.changePrev}>Change Previous Score</button>
+                </div>
             </div>
         ) //end return 
     } //end render

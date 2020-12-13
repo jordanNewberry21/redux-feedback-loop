@@ -32,13 +32,25 @@ class Understanding extends Component{
         
     }
 
+    changePrev = () => {
+        console.log('going back to the last page.....');
+        this.props.history.push('/feeling');
+    }
+
     render(){
         return(
             <div>
                 <h2>How well are you understanding the current content?</h2>
+                <h4>Score 1-5</h4>
                 <input onChange={(event) => this.handleChange(event, 'understanding')}
                     required type="number" max="5" label="understanding?" />
                 <button onClick={this.nextPage}>NEXT</button>
+                <br />
+                <br />
+                <br />
+                <div>
+                    <button onClick={this.changePrev}>Change Previous Score</button>
+                </div>
             </div>
         ) //end return 
     } //end render

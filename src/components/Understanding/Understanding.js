@@ -2,6 +2,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// material-ui
+import { withStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+// styles
+const styles = theme => ({
+    fab: {
+        margin: theme.spacing.unit,
+     },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+      },
+    button: {
+        margin: theme.spacing.unit,
+      },
+
+});
+
 //class
 class Understanding extends Component{
 
@@ -40,18 +63,36 @@ class Understanding extends Component{
     }
 
     render(){
+        const classes = this.props;
         return(
             <div>
                 <h2>How well are you understanding the current content?</h2>
                 <h4>Score 1-5</h4>
-                <input onChange={(event) => this.handleChange(event, 'understanding')}
-                    required type="number" max="5" label="understanding?" />
-                <button onClick={this.nextPage}>NEXT</button>
-                <br />
-                <br />
-                <br />
+                <TextField
+                    required
+                    id="understanding"
+                    type="number"
+                    max="5"
+                    label="understanding?"
+                    className={classes.textField}
+                    onChange={(event) => this.handleChange(event, 'understanding')}
+                    margin="normal"
+                />
+                
+                <br /><br />
+
+                    <Fab onClick={this.nextPage}
+                        color="primary" aria-label="Add" className={classes.fab}>
+                        <AddIcon />
+                    </Fab>
+
+                <br /><br />
+
                 <div>
-                    <button onClick={this.changePrev}>Change Previous Score</button>
+                    <Button onClick={this.changePrev}
+                        color="secondary" className={classes.button}>
+                        Change Previous Score
+                    </Button>
                 </div>
             </div>
         ) //end return 

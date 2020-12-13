@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// material-ui
+import { withStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import TextField from '@material-ui/core/TextField';
+
+// styles
+const styles = theme => ({
+    fab: {
+        margin: theme.spacing.unit,
+    },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+      },
+
+});
+
 //class
 class Feeling extends Component{
+    
 
     // local state
     state = {
@@ -39,17 +59,34 @@ class Feeling extends Component{
     }
 
     render(){
+        const classes = this.props;
         return(
             <div>
                 <h2>How are you feeling today?</h2>
                 <h4>Score 1-5</h4>
-                <input onChange={(event) => this.handleChange(event, 'feeling')}
-                    required type="number" max="5" label="Feeling?" />
-                <button onClick={this.nextPage}>NEXT</button>
+                <TextField
+                    required
+                    id="feeling"
+                    type="number"
+                    max="5"
+                    label="feeling?"
+                    className={classes.textField}
+                    value={this.state.name}
+                    onChange={(event) => this.handleChange(event, 'feeling')}
+                    margin="normal"
+                />
+                
+                <br /><br />
+
+                    <Fab onClick={this.nextPage}
+                        color="primary" aria-label="Add" className={classes.fab}>
+                        <AddIcon />
+                    </Fab>
+                    
             </div>
         ) //end return 
     } //end render
 } //end class 
 
 //export
-export default connect()(Feeling); 
+export default connect(withStyles(styles))(Feeling); 

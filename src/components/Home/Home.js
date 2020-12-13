@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// material-ui
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+
 //class
 class Home extends Component{
 
@@ -10,11 +14,18 @@ class Home extends Component{
     }
 
     render(){
+        const classes = this.props;
         return(
             <div>
                 <h2>Welcome to the Feedback Loop!</h2>
                 <h3>Please click the button below to get started.</h3>
-                <button onClick={this.nextPage}>START</button>
+
+                <br />
+                
+                <Button onClick={this.nextPage} variant="contained" 
+                        color="primary" className={classes.button}>
+                    Leave New Feedback
+                </Button>
             </div>
         ) //end return 
     } //end render

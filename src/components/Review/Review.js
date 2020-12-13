@@ -2,6 +2,11 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+//material-ui
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+
 //class
 class Review extends Component{
 
@@ -31,6 +36,7 @@ class Review extends Component{
     }
 
     render(){ // displaying user feedback results
+        const classes = this.props;
         return(
             <div>
                 <div>
@@ -45,12 +51,19 @@ class Review extends Component{
                 <div>
                     <h3>Comments: {this.props.reduxState.formInputs[3]}</h3>
                 </div>
-                <button onClick={this.submit}>Submit Feedback</button>
-                <br />
-                <br />
-                <br />
+                <Button onClick={this.submit} variant="contained"
+                    color="primary" >
+                        Submit Feedback
+                    <CloudUploadIcon className={classes.rightIcon} />
+                </Button>
+
+                <br /><br />
+                
                 <div>
-                    <button onClick={this.changePrev}>Change Previous Score</button>
+                    <Button onClick={this.changePrev} 
+                        color="secondary" className={classes.button}>
+                        Change Previous Score
+                    </Button>
                 </div>
             </div>
         ) //end return 

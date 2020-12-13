@@ -19,12 +19,12 @@ I made this React / Redux infinite feedback form for class at [Prime Digital Aca
 ## Built With
 
 I built this app in about 15 hours using:
-    - Express
-    - React
-    - Axios
-    - Redux
-    - Material-UI
-    - postgreSQL
+- Express
+- React
+- Axios
+- Redux
+- Material-UI
+- postgreSQL
 
 ## Acknowledgement
 Thanks to [Prime Digital Academy](www.primeacademy.io) who gave me the knowledge and tools to build apps like these for the people in my life.

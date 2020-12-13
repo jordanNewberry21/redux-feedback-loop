@@ -22,16 +22,12 @@ class Comments extends Component{
 
     // nextPage function
     nextPage = () => {
-        // input validation
-        if (this.state.newFeedback.comments === undefined) {
-            alert('Please fill in the required information!')
-        } else {
-            console.log('In nextPage button.....');
-            // dispatch to redux store
-            this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.comments})
-            // push to the next view
-            this.props.history.push('/review');
-        }
+        console.log('In nextPage button.....');
+        // dispatch to redux store
+        this.props.dispatch( { type: 'INPUT_FORM', payload: this.state.newFeedback.comments})
+        // push to the next view
+        this.props.history.push('/review');
+        
     }
 
     handleChange = (event, inputType) => { // handle change function

@@ -13,6 +13,9 @@ const formInputs = (state=[], action) => {
         return [...state, action.payload]
     } else if (action.type === 'RESET') {
         return state=[];
+    } else if (action.type === 'CHANGE_LAST') {
+        // let itemIndex = state.length-1;
+        return state.filter((item, index) => index !== action.payload);
     }
     return state;
 }

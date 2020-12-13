@@ -35,7 +35,9 @@ class Comments extends Component{
     }
 
     changePrev = () => {
+        let lastFeedback = this.props.reduxState.formInputs.length-1;
         console.log('going back to the last page.....');
+        this.props.dispatch( { type: 'CHANGE_LAST', payload: lastFeedback } );
         this.props.history.push('/support');
     }
 
@@ -58,5 +60,10 @@ class Comments extends Component{
     } //end render
 } //end class 
 
+// bringing in reduxStore to access the feedback reducer
+const putReduxStateOnProps = ( reduxState) => ({ 
+    reduxState
+  })
+
 //export
-export default connect()(Comments); 
+export default connect(putReduxStateOnProps)(Comments); 

@@ -33,7 +33,9 @@ class Support extends Component{
     }
 
     changePrev = () => {
+        let lastFeedback = this.props.reduxState.formInputs.length-1;
         console.log('going back to the last page.....');
+        this.props.dispatch( { type: 'CHANGE_LAST', payload: lastFeedback } );
         this.props.history.push('/understanding');
     }
 
@@ -56,5 +58,10 @@ class Support extends Component{
     } //end render
 } //end class 
 
+// bringing in reduxStore to access the feedback reducer
+const putReduxStateOnProps = ( reduxState) => ({ 
+    reduxState
+  })
+
 //export
-export default connect()(Support); 
+export default connect(putReduxStateOnProps)(Support); 

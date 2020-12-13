@@ -22,6 +22,7 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <br/>
+        {/* routes for the different views */}
         <Router>
           <Route exact path="/" component={Home}/>
           <Route path="/feeling" component={Feeling}/>

@@ -75,7 +75,7 @@ class Feeling extends Component{
                     onChange={(event) => this.handleChange(event, 'feeling')}
                     margin="normal"
                 />
-                
+
                 <br /><br />
 
                     <Fab onClick={this.nextPage}
@@ -88,5 +88,8 @@ class Feeling extends Component{
     } //end render
 } //end class 
 
-//export
+//export // i'm not sure if this is actually how i have to do it, but it worked finally.
+// I think this might actually be what confused me the most about material-ui
+// is i'm not sure when I need to use withStyles since other components seem 
+// to inherit the styles from other components.
 export default connect(withStyles(styles))(Feeling); 

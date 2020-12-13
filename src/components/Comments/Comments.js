@@ -46,8 +46,10 @@ class Comments extends Component{
     }
 
     changePrev = () => {
+        // targeting the last item in my reducer
         let lastFeedback = this.props.reduxState.formInputs.length-1;
         console.log('going back to the last page.....');
+        // sending last item index back to the store as payload
         this.props.dispatch( { type: 'CHANGE_LAST', payload: lastFeedback } );
         this.props.history.push('/support');
     }

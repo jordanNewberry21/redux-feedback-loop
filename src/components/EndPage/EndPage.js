@@ -19,12 +19,12 @@ class EndPage extends Component{
         const classes = this.props;
         return(
             <div>
-                <h2>FeedBack!! FINISHED! WOO</h2>
+                <h2>Thank you for finishing your feedback today!</h2>
                 <div>
-                    <h2>Thank You!</h2>
-                    <Button onClick={this.restart}
-                        variant="contained" color="primary" className={classes.button}>
-                            Leave New Feedback
+                    <h3>Do you want to leave another one?</h3>
+                    <Button onClick={this.restart} variant="contained" 
+                            color="primary" className={classes.button}>
+                        Leave New Feedback
                     </Button>
                 </div>
             </div>

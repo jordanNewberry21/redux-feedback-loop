@@ -27,4 +27,4 @@ I built this app in about 15 hours using:
 - postgreSQL
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who gave me the knowledge and tools to build apps like these for the people in my life.
+Thanks to [Prime Digital Academy](www.primeacademy.io) and my friends in Group 2 who continue to inspire me to build quality sites and applications.

@@ -24,7 +24,7 @@ class Home extends Component{
                 
                 <Button onClick={this.nextPage} variant="contained" 
                         color="primary" className={classes.button}>
-                    Leave New Feedback
+                    Start
                 </Button>
             </div>
         ) //end return 

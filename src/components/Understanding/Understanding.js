@@ -3,27 +3,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // material-ui
-import { withStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
-// styles
-const styles = theme => ({
-    fab: {
-        margin: theme.spacing.unit,
-     },
-    textField: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-        width: 200,
-      },
-    button: {
-        margin: theme.spacing.unit,
-      },
-
-});
 
 //class
 class Understanding extends Component{

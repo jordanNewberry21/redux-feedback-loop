@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 //material-ui
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
 
 //class
 class Review extends Component{

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 // material-ui
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
 
 //class
 class EndPage extends Component{
